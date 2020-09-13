@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <style type="text/css">
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            body {
+                background-image: url(image/Dark.jpg);
+                background-repeat: no-repeat;
+            }
+            div.login {
+                height: 400px;
+                margin: 15% 36%;
+                /* border: 3px solid rgb(255, 82, 29); */
+            }
+            h2 {
+                margin: 30px;
+                text-align: center;
+                color: azure;
+            }
+            input {
+                display: block;
+                margin: 20px auto;
+                border-width: 0px;
+                border-radius: 5px;
+                width: 63%;
+                height: 7%;
+            }
+            input[type=submit] {
+                width: 33%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login">
+			<h2>Login</h2>
+			<br>
+			<input class="id" type="text" name="Id" placeholder="id" id="iid">
+			<br>
+			<input class="pw" type="password" name="Password" placeholder="password" id="ipw">
+			<br>
+			<input class="sbm" type="submit" name="Submit" id="isbm">
+        </div>
+        <script>
+            // var input = prompt('请输入（随便什么都行）：');
+            var isbm = document.getElementById("isbm");
+			var iid = document.getElementById("iid");
+			var ipw = document.getElementById("ipw");
+
+            mycolor = isbm.style.backgroundColor;
+            myfontsize = isbm.style.fontSize;
+            myfontweight = isbm.style.fontWeight;
+            myfontfamily = isbm.style.fontFamily;
+
+            isbm.onmouseover = onSubmit;
+            isbm.onmouseout = outSubmit;
+            isbm.onclick = output;
+
+            function output() {
+                if (this.className) {
+					alert(iid.value + ": " + ipw.value)
+				}
+            }
+
+            function onSubmit() {
+                this.style.backgroundColor = "rgb(10, 255, 30)";
+                this.style.fontSize = "large";
+                this.style.fontWeight = "900";
+                this.style.fontFamily = "KaiTi";
+            }
+
+            function outSubmit() {
+                this.style.backgroundColor = mycolor;
+                this.style.fontSize = myfontsize;
+                this.style.fontWeight = myfontweight;
+                this.style.fontFamily = myfontfamily;
+            }
+        </script>
+    </body>
+</html>

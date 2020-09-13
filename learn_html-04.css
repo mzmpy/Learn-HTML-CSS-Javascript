@@ -1,0 +1,93 @@
+body {
+    width: 63%;
+    margin: auto;
+    font-size: 16px;
+    background-image: url('sanguo.jpg');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 100% 5.4em;
+    background-attachment: fixed;
+}
+
+main {
+    border: 0.5px solid #0e0d0d;
+}
+
+p {
+    text-indent: 2em;
+    color: rgb(39, 9, 9);
+    text-shadow: 0.5px 0.5px 2px rgb(13, 27, 155);
+}
+
+h1 {
+    /* display: none; */
+    text-align: center;
+    color: rgb(255, 115, 0);
+}
+
+h3 {
+    color: rgb(19, 60, 245);
+    text-shadow: 5px 5px 1px orangered;
+}
+
+p.copyright {
+    text-align: center;
+    font-size: 56%;
+}
+
+hr {
+    text-decoration: 5px solid black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+nav ul li {
+    float: left;
+    width: 33.3333%;
+}
+
+li a:link, li a:visited {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    color: #0e0d0d;
+    background-color: #f4f4f8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+aside li a:link, aside li a:visited {
+    width: 100%;
+    color: #0e0d0d;
+    background-color: #f4f4f8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+li a:hover, li a:active {
+    background-color:#cc4b00;
+}
+
+aside li a:hover, aside li a:active {
+    background-color:#cc4b00;
+}
+
+aside {
+    width: 18.5%;
+    border-top: 0.5px solid #0e0d0d;
+    position: absolute;
+    left: 0em;
+    top: 7.2em;
+    font-size: 75%;
+}

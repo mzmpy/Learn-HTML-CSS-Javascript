@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <style>
+            #pid1 {
+                color: blue;
+            }
+
+            #pid2 {
+                color: red;
+            }
+
+            .pclass {
+                color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <input placeholder="anything">
+        <p id="pid1" class="pclass">猜猜我是什么颜色</p>
+        <p id="pid2" class="pclass">猜猜我是什么颜色</p>
+        <script>
+            var input = document.getElementsByTagName("input")[0];
+
+            input.onkeydown = function(event) {
+                event = event || window.event;
+
+                console.log(event.keyCode)
+            }
+        </script>
+    </body>
+</html>
