@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<htnl>
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8">
+        <script>
+            args = []
+
+            fun = function() {
+                return args[0] * 3;
+            }
+
+            fun.before = function(beforeFun) {
+                return beforeFun;
+            }
+
+            beforeFun = function(arg) {
+                args[0] = arg + 2;
+                return fun()
+            }
+
+            alert(fun.before(beforeFun)(5))
+        </script>
+    </head>
+    <body></body>
+</htnl>

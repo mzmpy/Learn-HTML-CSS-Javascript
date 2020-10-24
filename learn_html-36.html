@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset=‘utf-8“>
+        <style>
+            .rectangle {
+                transition-property: width, height, margin-top, margin-left;
+                transition-duration: 3s;
+                position: fixed;
+                transform: translateX(-50%) translateY(-50%);
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button">click me</button>
+
+        <script>
+            var button = document.getElementsByTagName("button")[0];
+
+            button.onclick = function play() {
+                let div = document.createElement("div");
+                div.style.left = "150px";
+                div.style.top = "150px";
+                div.style.width = 0;
+                div.style.height = 0;
+                div.className = "rectangle";
+                document.body.append(div);
+
+                setTimeout(() => {
+                    div.style.width = "200px";
+                    div.style.height = "200px";
+
+                    div.addEventListener("transitionend", function handler() {
+                        div.removeEventListener("transitionend", handler);
+
+                        let timer = setInterval(() => {
+                            let left = getStyle(div, "left");
+                            let top = getStyle(div, "top");
+
+                            if(parseInt(left)>500 || parseInt(top)>500) {
+                                clearInterval(timer);
+                            }
+
+                            left = parseInt(left);
+                            top = parseInt(top);
+                            left += 1;
+                            top += 1;
+                            div.style.left = left + "px";
+                            div.style.top = top + "px";
+                        }, 10);
+                    });
+                }, 0);
+            }
+
+            function getStyle(ele, attr) {
+                if(window.getComputedStyle) {
+                    return window.getComputedStyle(ele, null)[attr];
+                }
+                return ele.currentStyle[attr];
+            }
+        </script>
+    </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset=‘utf-8“>
+        <style>
+            .rectangle {
+                transition-property: width, height, margin-top, margin-left, background-color;
+                transition-duration: 3s;
+                position: fixed;
+                transform: translateX(-50%) translateY(-50%);
+                background-color: red;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button">click me</button>
+
+        <script>
+            var button = document.getElementsByTagName("button")[0];
+
+            button.onclick = function play() {
+                let div = document.createElement("div");
+                div.style.left = "150px";
+                div.style.top = "150px";
+                div.style.width = 0;
+                div.style.height = 0;
+                div.className = "rectangle";
+                document.body.append(div);
+
+                setTimeout(() => {
+                    div.style.width = "200px";
+                    div.style.height = "200px";
+                    div.style.backgroundColor = "green";
+
+                    div.addEventListener("transitionend", function handler() {
+                        div.removeEventListener("transitionend", handler);
+
+                        let timer = setInterval(() => {
+                            let left = getStyle(div, "left");
+                            let top = getStyle(div, "top");
+
+                            if(parseInt(left)>500 || parseInt(top)>500) {
+                                clearInterval(timer);
+                            }
+
+                            left = parseInt(left);
+                            top = parseInt(top);
+                            left += 1;
+                            top += 1;
+                            div.style.left = left + "px";
+                            div.style.top = top + "px";
+                        }, 10);
+                    });
+                }, 0);
+            }
+
+            function getStyle(ele, attr) {
+                if(window.getComputedStyle) {
+                    return window.getComputedStyle(ele, null)[attr];
+                }
+                return ele.currentStyle[attr];
+            }
+        </script>
+    </body>
+</html> -->

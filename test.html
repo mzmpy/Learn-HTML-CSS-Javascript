@@ -1,33 +1,71 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
         <title>Test</title>
+        <meta charset=‘utf-8“>
         <style>
-            #pid1 {
-                color: blue;
-            }
-
-            #pid2 {
-                color: red;
-            }
-
-            .pclass {
-                color: orange;
+            .rectangle {
+                transition-property: width, height, margin-top, margin-left, background-color;
+                transition-duration: 3s;
+                position: fixed;
+                transform: translateX(-50%) translateY(-50%);
+                background-color: red;
+                border-radius: 50%;
             }
         </style>
     </head>
     <body>
-        <input placeholder="anything">
-        <p id="pid1" class="pclass">猜猜我是什么颜色</p>
-        <p id="pid2" class="pclass">猜猜我是什么颜色</p>
+        <button type="button">click me</button>
+
         <script>
-            var input = document.getElementsByTagName("input")[0];
+            var button = document.getElementsByTagName("button")[0];
 
-            input.onkeydown = function(event) {
-                event = event || window.event;
+            button.onclick = function play() {
+                let div = document.createElement("div");
+                div.style.left = "150px";
+                div.style.top = "150px";
+                div.style.width = 0;
+                div.style.height = 0;
+                div.className = "rectangle";
+                document.body.append(div);
 
-                console.log(event.keyCode)
+                new Promise(function(resolve, reject) {
+                    setTimeout(() => {
+                    div.style.width = "200px";
+                    div.style.height = "200px";
+                    div.style.backgroundColor = "green";
+                    }, 0);
+
+                    div.addEventListener("transitionend", function handler() {
+                        div.removeEventListener("transitionend", handler);
+                        resolve(div);
+                    });
+                }).then(
+                    (div) => {
+                        let timer = setInterval(() => {
+                            let left = getStyle(div, "left");
+                            let top = getStyle(div, "top");
+
+                            if(parseInt(left)>=500 || parseInt(top)>=500) {
+                                clearInterval(timer);
+                            }
+
+                            left = parseInt(left);
+                            top = parseInt(top);
+                            left += 1;
+                            top += 1;
+                            div.style.left = left + "px";
+                            div.style.top = top + "px";
+                        }, 10);
+                    }, null
+                )
+            }
+
+            function getStyle(ele, attr) {
+                if(window.getComputedStyle) {
+                    return window.getComputedStyle(ele, null)[attr];
+                }
+                return ele.currentStyle[attr];
             }
         </script>
     </body>

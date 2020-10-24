@@ -1,0 +1,9 @@
+摘要 
+电磁相互作用把质子与电子束缚起来，形成氢原子。人类对于电磁相互作用的深刻认识发展出智能手机和信息技术，给日常生活带来了极大的便利。相比之下，夸克和胶子如何被强相互作用束缚从而形成质子与中子，人类还缺乏充分的认识。因此，全球的中高能核物理学家提出了建设未来高精度极化电子—离子对撞机以对其进行更深入的研究。文章主要介绍中国极化电子—离子对撞机实验上的物理问题，以及量子色动力学格点计算在这些物理研究中的重要作用。
+关键词 ： 电子—离子对撞机,  量子色动力学,  核子结构,  核子自旋结构,  核介质效应,  奇特强子态,  核子质量    
+Abstract：
+Our understanding of the electromagnetic force, which binds together a proton and an electron to form a hydrogen atom, has given birth to the development of the smartphone as well as cutting-edge information technology. It has revolutionized our daily life. On the other hand, we know little about how quarks and gluons are confined by the strong interaction force within a proton or neutron, or about their complicated dynamics inside a nucleon. Therefore, nuclear physicists around the world have proposed to build a polarized electron-ion collider to further research in this field. The design of the Electron-Ion Collider in China (EicC) as well as several key physics topics will be discussed in this article, as well as the lattice QCD calculation and its importance in nucleon structure studies.
+Key words： Electron-Ion Collider    quantum chromodynamics    nucleon structure    nucleon spin structure    nuclear effects    exotic hadronic states    nucleon mass structure   
+收稿日期: 2020-07-03     
+引用本文:   
+梁羽铁，杨一玻，赵宇翔. 中国极化电子—离子对撞机[J]. 物理, 2020, 49(8): 525-536. LIANG Yu-Tie，YANG Yi-Bo，ZHAO Yu-Xiang. The Electron-Ion Collider in China. Physics, 2020, 49(8): 525-536.
